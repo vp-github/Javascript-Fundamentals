@@ -7,4 +7,4 @@ const displayMessage = function (message) {
 };
 
 document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value);
+  const guess = Number(document.querySelector('.guess').value);06-Modal07-Pig-Game
