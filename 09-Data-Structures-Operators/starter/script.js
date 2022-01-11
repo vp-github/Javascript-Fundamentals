@@ -140,6 +140,29 @@ for (const [team, odd] of Object.entries(game.odds)) {
   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
   console.log(`Odd of ${teamStr} ${odd}`);
 }
+//Mentor Challenge
+let [goalKeeper] = players1;
+let i = 4;
+players1.shift();
+// console.log(players1);
+let [...defencePlayer] = players1.slice(0, 4);
+// console.log(defencePlayer);
+while (i > 0) {
+  players1.shift();
+  i--;
+}
+// console.log(players1);
+let [...servicePlayer] = players1;
+// arr['goal_keeper']=player1[0]; 11-5
+// 0th index exclude
+
+// for loop i=0;i<4
+// arr['defence']=player1[i]
+
+//  exclude defence player from player1
+
+// arr['service_ply'] =player1;
+
 //Third Challenge
 
 const gameEvents = new Map([
@@ -156,7 +179,7 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
-const events = [...new Set(gameEvents.values())];
+const events = [...new Set(gameEvents.values())]; // Loop - remove duplicates
 console.log(events);
 gameEvents.delete(64);
 
@@ -173,6 +196,13 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+//Mentor Challenge-2 Loop - remove duplicates
+
+const raw = [...gameEvents.values()];
+let result = raw.filter((item, index) => {
+  return raw.indexOf(item) === index;
+});
+console.log(result);
 
 // Fourth Challenge
 
@@ -193,3 +223,4 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 });
+//capitalizeFirstLetter - not available in javascript
